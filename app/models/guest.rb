@@ -18,7 +18,7 @@ class Guest
   end
 
   def trips
-    Trip.all.select { |list| list.guest == self.name }
+    Trip.all.select { |list| list.guest == self }
   end
 
   def trip_count
@@ -26,7 +26,7 @@ class Guest
   end
 
   def self.pro_traveler
-    self.all.select { |list| list.trip_count > 1 }.map { |list| list.name }
+    self.all.select { |list| list.trip_count > 1 }
   end
 
   def self.find_all_by_name(search_name)

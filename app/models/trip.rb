@@ -1,6 +1,7 @@
 
 class Trip
-  attr_reader :guest, :listing, :duration
+  attr_reader :guest, :listing
+  attr_accessor :duration
 
   @@all = []
 
@@ -14,5 +15,5 @@ class Trip
   def self.all
     @@all
   end
-  
+
 end
