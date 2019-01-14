@@ -31,8 +31,6 @@ class Listing
   end
 
   def self.most_popular
-    trip_count = self.all.map { |list| list.trips.count }
-    trip_count.sort!
-    self.all.find {|list| list.trips.count == trip_count.last}
+    self.all.max_by {|list| list.trip_count}
   end
 end
